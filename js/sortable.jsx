@@ -38,7 +38,7 @@ function filter(obj, predicate) {
  * Return the values from arr1 that are not present in arr2.
  */
 function difference(arr1, arr2) {
-    return filter(arr1, (each) => {return arr2.indexOf(each) < 0});
+    return filter(arr1, (item) => {return arr2.indexOf(item) < 0});
 }
 
 // Takes an array of components to sort
