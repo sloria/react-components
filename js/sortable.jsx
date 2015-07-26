@@ -23,22 +23,10 @@ var userSelect = rhs => {
 var sortableDisabled = userSelect("none");
 
 /**
- * Behaves like Array.prototype.filter, except it handle any iterable type (not just Arrays).
- */
-function filter(obj, predicate) {
-    var results = [];
-    for (var i = 0, len = obj.length; i < len; i++) {
-        var value = obj[i];
-        if (predicate(value, i, obj))  results.push(value);
-    }
-    return results;
-}
-
-/**
  * Return the values from arr1 that are not present in arr2.
  */
 function difference(arr1, arr2) {
-    return filter(arr1, (item) => {return arr2.indexOf(item) < 0});
+    return Array.prototype.filter.call(arr1, (item) => {return arr2.indexOf(item) < 0});
 }
 
 // Takes an array of components to sort
